@@ -1,0 +1,50 @@
+{
+  "name": "jsonstreamkit",
+  "version": "0.1.0",
+  "description": "Zero-dependency TypeScript streaming JSON parser and stringifier. Drop-in replacement for the abandoned 'JSONStream' npm package (12.6M/week). Parse large JSON files without loading them into memory.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --forceExit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "json",
+    "stream",
+    "streaming",
+    "parser",
+    "stringify",
+    "large-files",
+    "ndjson",
+    "transform",
+    "JSONStream",
+    "typescript",
+    "zero-dependencies"
+  ],
+  "author": "trananhtung",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trananhtung/jsonstreamkit.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.0.0",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.11",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  }
+}
